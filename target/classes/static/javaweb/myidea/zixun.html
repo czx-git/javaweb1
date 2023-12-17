@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻资讯</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+<style>
+    .image {
+        position: relative;
+        margin: 0 auto;
+        background-size: 100%;
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    .scrolling-images {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden; /* 隐藏溢出部分 */
+    }
+
+    .box-img {
+        background-size: 100%;
+        position: absolute;
+        margin: 0 auto;
+        opacity: 0;
+        width: 100vw;
+        height: 100vh; /* 设置每个页面高度为视口高度 */
+        transition: all 1s;
+    }
+
+    .box-img:nth-child(1) {
+        opacity: 1;
+    }
+
+    .box-left {
+        max-width: 10vw;
+        height: auto;
+        position: absolute;
+        top: 40vh;
+        opacity: 0;
+        text-align: center;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-left:hover {
+        opacity: 1;
+        position: absolute;
+    }
+
+    .box-right {
+        max-width: 10vw;
+        height: auto;
+        opacity: 0;
+        position: absolute;
+        top: 40vh;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        right: 2vw;
+    }
+
+    .box-right:hover {
+        opacity: 1;
+    }
+
+
+    .box-zj {
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-zj > ul {
+        padding-bottom: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .box-zj li {
+        border-radius: 100%;
+        display: flex;
+    }
+
+
+
+    .carousel-indicators {
+        align-items: center;
+        left: 38vw;
+        justify-content: center;
+    }
+
+    .botton {
+        max-width: 3vw;
+        height: auto;
+        display: flex;
+        margin-right: 3vw;
+        float: left;
+        margin-bottom: 5vh;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+
+    .con {
+        background-color: rgba(0, 0, 0, 0.3);
+        text-align: center;
+        position: absolute;
+        border: 1px solid #ccc;
+        white-space: nowrap;
+        width: 100%;
+        top: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .txt {
+        margin: 5px 50px;
+        color: #ffffff;
+        font-family: "华文行楷", serif;
+        height: auto;
+        letter-spacing: 5px;
+        object-fit: cover;
+    }
+
+
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+        top: 115px;
+        justify-content: center;
+        width: 100vw;
+        text-align: center;
+        position: absolute;
+    }
+
+    .nav-item {
+        text-align: center;
+        justify-content: center;
+        margin: 15px 80px 0 80px;
+        list-style-type: none;
+    }
+
+    .nav-link {
+        float: left;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-link:hover {
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+    .nav-link:active {
+        color: #ffef00;
+        text-decoration: none;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .hero-content {
+        overflow: hidden;
+        width: 100%;
+        height: 470px;
+    }
+    .hero-image {
+        background-image: url("images/piyingxi.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 470px;
+        position: relative;
+    }
+    .large-text1 {
+        top: 50%;
+        left: 50%;
+        width: 350px;
+        height: 100px;
+        background: url(./images/second_title.png) no-repeat;
+        background-size: contain;
+        line-height: 100px;
+        text-align: center;
+        font-size: 50px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        color: #0f0f0f;
+    }
+    body {
+        background-color: rgba(245, 245, 245, 1);
+        background-image: url(images/5-13050G33309.jpg);
+        background-repeat: repeat;
+    }
+    .new_title_container{
+        width: 100%;
+        padding: 40px 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .zuobianxian{
+        width: 240px;
+        height: 1px;
+        border: 1px solid #bb1919;
+    }
+    .new_title_head_mid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .xinwen{
+        font-size: 34px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .youbianxian{
+        width: 240px;
+        height: 1px;
+        border: 1px solid #bb1919;
+    }
+    .new_main_container{
+        font-family: "微软雅黑",serif;
+        width: 1200px;
+        border: #e8e8e8 1px solid;
+        margin: auto;
+        padding-bottom:  50px;
+    }
+    .new_main_row {
+        width: 1250px;
+        margin: auto auto 5px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        font-family: "微软雅黑",serif;
+    }
+    .row{
+        width: 1250px;
+        margin: auto auto 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 33px 55px 33px 55px;
+        background-size: 100% 100%;
+        background: url(images/img27.jpg) no-repeat;
+        overflow: hidden;
+    }
+    .new_img_row{
+        width: 440px;
+        height: 248px;
+        position: relative;
+        float: left;
+        margin-right: 30px;
+    }
+    .new_mid {
+        width: 100%;
+        height: 248px;
+        overflow: hidden;
+        background: url(images/d5b496754df3f86cbe8a77ef031ee636.png) no-repeat;
+        background-size: 550px 248px;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+    .new_title {
+        margin-top: 13px;
+        margin-bottom: 17px;
+        line-height: 1.2;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .new_title a {
+        color: #000000;  /* 正常状态下的文本颜色 */
+        text-decoration: none;  /* 去掉默认的下划线 */
+    }
+    .new_title a:hover {
+        color: #ac2925;  /* 鼠标悬停时的文本颜色 */
+    }
+    .fengexian{
+        width: 100%;
+        height: 1px;
+        border: 1px solid #921c2b;
+        margin: 15px 0;
+    }
+    .p{
+        font-size: 14px;
+        color: #000000;
+        line-height: 25px;
+        height: 120px;
+        display: flex;
+        overflow: hidden;
+        margin-top: 10px;
+        text-overflow: ellipsis;
+    }
+    .more{
+        position: relative;
+        display: inline-block;
+        padding: 0 22px;
+        font-family: "微软雅黑",serif;
+        vertical-align: middle;
+        margin-top: 10px;
+    }
+    a.more {
+        color: #000000;  /* 正常状态下的文本颜色 */
+        text-decoration: none;  /* 去掉默认的下划线 */
+    }
+    a.more:hover {
+        color:#ac2925;
+    }
+    .flex-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .datakuang {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        background: url(images/guide1.jpg) no-repeat;
+        background-size: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .day {
+        font-size: 34px;}
+    .nianyue {
+        font-size: 14px;}
+    .xuxian {
+        width: 100%;
+        border-top: 1px dashed #999999;
+        margin-top: 2px;
+        margin-bottom: 7px;
+    }
+    .page-jump{
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<style>
+    .footer {
+        width: 100%;
+        height: 450px;
+        background: url(images/academic_bg.jpg) center center repeat;
+        padding-top: 50px;
+        display: block;;
+    }
+    .container {
+        max-width: 1920px;
+        height: 200px;
+        font-size: 14px;
+        overflow: hidden;
+        margin: 10px auto 0;
+        position: relative;
+        padding: 0 15px;
+    }
+    .upleft-col-sm6{
+        width: 50%;
+        float: left;
+        padding-left: 5px;
+        padding-top: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .upleft-img{
+        display: inline-block;
+        float: left;
+        width: 110px;
+        height: auto;
+        margin-right: 20px;
+    }
+    .upleft-p{
+        margin-right: 100px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    .upright-col-sm6{
+        width: 50%;
+        height: 200px;
+        float: right;
+        padding-left: 20px;
+        position: relative;
+        display: flex;
+        align-items: center; /* 调整为垂直居中 */
+        justify-content: center; /* 调整为水平居中 */
+        box-sizing: border-box;
+        border-left: 1px solid rgba(255,255,255, 0.4);
+        color: #FFFFFF;
+    }
+    .footer-up-right{
+        width: 50%;
+        height: 200px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* 可选，根据需要垂直居中 */
+    }
+    .upright-title{
+        margin-bottom: 20px;
+        color: #333333;
+        font-size: 32px;
+    }
+    .link-row{
+        box-sizing: border-box;
+        margin-bottom: 30px; /* 可根据需要调整间距 */
+    }
+    .links{
+        box-sizing: border-box;
+    }
+    .link-col-xs6{
+        width: 100%;
+    }
+    .footer-fenxian{
+        width: 98%;
+        border-top: 1px solid #FFFFFF;
+        margin: 10px;
+    }
+    .container-bottom{
+        width: auto;
+        max-width: 908px;
+        height: auto;
+        line-height: normal;
+        font-size: 18px;
+        margin: 30px auto 0;
+        padding: 0 20px;
+    }
+    .bottom{
+        position: relative;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bottom-up{
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+    .text{
+        font-size:15px;
+        color: #000000;
+        line-height:2;
+        font-family:微软雅黑,serif;
+    }
+</style>
+<style>
+    .navbar-default .navbar-nav>li>a { color: #ffffff; }
+
+</style>
+<body>
+<div id="page1" class="page">
+    <header class="image">
+        <div id="scrolling-images">
+            <img class="box-img" src="img/80.jpg" alt="Image 1">
+            <!--            <a  href="https://www.ihchina.cn/news_details/25973.html">-->
+            <img class="box-img" src="img/q111.png" alt="Image 1">
+            <!--            </a>-->
+            <img class="box-img" src="img/21.jpg" alt="Image 1">
+            <img class="box-img" src="imgd.jpg" alt="Image 1">
+            <img class="box-img" src="img/2023.jpg" alt="Image 1">
+
+            <div><img class="box-left" src="img/qw04.png" alt=""></div>
+            <div><img class="box-right" src="img/qw03.png" alt=""></div>
+            <div class="box-zj">
+                <ul class="carousel-indicators">
+                    <img class="botton action" src="img/rq1.png" alt="">
+                    <!--                    <span class="indicator"></span> &lt;!&ndash; 添加这个标签来显示图标 &ndash;&gt;-->
+                    <img class="botton" src="img/rq1.png" alt="">
+                    <!--                    <span class="indicator"></span> &lt;!&ndash; 添加这个标签来显示图标 &ndash;&gt;-->
+                    <img class="botton" src="img/rq1.png" alt="">
+                    <!--                    <span class="indicator"></span> &lt;!&ndash; 添加这个标签来显示图标 &ndash;&gt;-->
+                    <img class="botton" src="img/rq1.png" alt="">
+                    <!--                    <span class="indicator"></span> &lt;!&ndash; 添加这个标签来显示图标 &ndash;&gt;-->
+                    <img class="botton" src="img/rq1.png" alt="">
+                    <!--                    <span class="indicator"></span> &lt;!&ndash; 添加这个标签来显示图标 &ndash;&gt;-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="con">
+            <div class="txt">
+                <h1 style="font-size: 50px">
+                    传承非遗文化&nbsp;&nbsp;提高文化自信
+                </h1>
+            </div>
+        </div>
+
+        <nav>
+            <div class="navbar flex-container">
+                <ul class="nav-lv flex-item">
+                    <li class="nav-item cur">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="index.html">首页</a>
+                        </div>
+                        <>
+
+                    <li class="nav-item">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="baike.html" target="_blank" id="link1"
+                               style="text-decoration: none">百科</a>
+                        </div>
+                        <>
+
+                    <li class="nav-item">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="" target="_blank" id="link2"
+                               style="text-decoration: none">资源</a>
+                        </div>
+                        <>
+
+                    <li class="nav-item">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="zixun.html" target="_blank" id="link3"
+                               style="text-decoration: none">资讯</a>
+                        </div>
+                        <>
+
+                    <li class="nav-item">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="login.html" target="_blank" id="link4"
+                               style="text-decoration: none">登录</a>
+                        </div>
+                        <>
+
+                    <li class="nav-item">
+                        <div class="nav-tit">
+                            <a class="nav-link" href="" target="_blank" id="link5"
+                               style="text-decoration: none">注册</a>
+                        </div>
+                        <>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<div class="hero-content">
+    <div class="hero-image">
+        <h1  class="large-text1">新闻资讯</h1>
+    </div>
+</div>
+<div class="new_main_page"  >
+    <div class="new_main_page_in">
+        <div class="new_main_container" >
+            <div id="new_title_row">
+                <div class="new_title_container">
+                    <div class="zuobianxian"></div>
+                    <img src="images/tb_title_left.png" alt style="margin:0 25px 0 3px;">
+                    <div class="new_title_head_mid">
+                        <img src="images/yue1.png" style="width:113px;height:39px;" alt>
+                        <p class="xinwen">薪火相传·文明不灭</p>
+                        <img src="images/yue2.png" style="width:113px;height:39px;" alt>
+                    </div>
+                    <img src="images/tb_title_right.png" alt style="margin:0 3px 0 25px;">
+                    <div class="youbianxian">
+                    </div>
+                </div>
+            </div>
+            <div class="new_main_row">
+                <div class="row" row-id="1" >
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.fyrhome.cn/expressLine/news/detail/917093135450898432.html">
+                            <img src="images/xinwen2.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div id="title" class="new_title">
+                            <a target="_blank" href="https://www.fyrhome.cn/expressLine/news/detail/917093135450898432.html" >
+                                <b>中国非物质文化遗产保护协会第二届第四次理事会在赣州市召开</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div id="content" class="p">
+                            <p>12月3日，中国非物质文化遗产保护协会第二届第四次理事会在江西省赣州市召开，会长王晓峰主持会议。</p>
+                        </div>
+                        <a href="https://www.fyrhome.cn/expressLine/news/detail/917093135450898432.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div id="publishDate" class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">06</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" row-id="2">
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.ihchina.cn/news2_details/28620.html">
+                            <img src="images/xinwen1.jpg" alt="新闻1图片" width="440" height="248" >
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a target="_blank" href="https://www.ihchina.cn/news2_details/28620.html" >
+                                <b>第二届国潮文创设计大赛“数字创新”组与“中医药”组获奖作品出炉</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>第二届国潮文创设计大赛已圆满落幕，本届大赛相比上届新增“数字创新”和“中医药”两个子赛道，更是得到了米哈游和上海市中医文献馆的特别支持。</p>
+                        </div>
+                        <a href="https://www.ihchina.cn/news2_details/28620.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">04</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" row-id="3">
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.ihchina.cn/news2_details/28611.html">
+                            <img src="images/xinwen3.jpg" alt="新闻1图片" width="440" height="248" >
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a target="_blank" href="https://www.ihchina.cn/news2_details/28611.html" >
+                                <b>宁夏刺绣来湘开展交流展示活动</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>为加强湖南、宁夏两地文化艺术交流，促进民族文化融合，12月2日，由湖南省文化馆（湖南省非物质文化遗产保护中心）、宁夏回族自治区文化馆（宁夏回族自治区非物质文化遗产保护中心）联合主办，湖南省湘绣研究所有限公司协办的“湘遇塞上·绣绘匠心”宁夏刺绣赴湖南交流展示活动...</p>
+                        </div>
+                        <a href="https://www.ihchina.cn/news2_details/28611.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">03</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" row-id="4">
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.ihchina.cn/news2_details/28602.html">
+                            <img src="images/xinwen4.jpg" alt="新闻1图片" width="440" height="248" >
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a target="_blank" href="https://www.ihchina.cn/news2_details/28602.html" >
+                                <b>打造“广东非遗手信”IP 激活非遗发展动能2023年广东非遗手信名单揭晓</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>由广东省文化和旅游厅指导，广东省非物质文化遗产保护中心主办的2023年广东非遗手信征集评选目前已完满结束，100件“广东非遗手信”新鲜出炉！</p>
+                        </div>
+                        <a href="https://www.ihchina.cn/news2_details/28602.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">01</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" row-id="5">
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.ihchina.cn/news_details/28592.html">
+                            <img src="images/s6567058335f57.jpg" alt="新闻1图片" width="440" height="248" >
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a target="_blank" href="https://www.ihchina.cn/news_details/28592.html" >
+                                <b>综述丨中国高校《公约》 专项培训（第一期）</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>2023年11月24日下午，由中国非物质文化遗产保护中心、联合国教科文组织亚太地区非物质文化遗产国际培训中心、联合国教科文组织东亚多部门地区办事处共同启动的《保护非物质文化遗产公约》中国师资培训班（第一期）暨中国高校《公约》专项培训在中央文化和旅游管理干部学院...</p>
+                        </div>
+                        <a href="https://www.ihchina.cn/news_details/28592.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">29</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-11</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" row-id="6">
+                    <div class="new_img_row">
+                        <a target="_blank" href="https://www.ihchina.cn/news2_details/28578.html">
+                            <img src="images/xinwen5.jpg" alt="新闻1图片" width="440" height="248" >
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a target="_blank" href="https://www.ihchina.cn/news2_details/28578.html" >
+                                <b>为有暗香来，非遗里的宋韵表达</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>11月29日-12月3日，为有暗香来——2023宋韵文化节非遗展示展演活动将在浙江省非物质文化遗产馆举办。本次活动以展览、活态展示、展演等形式开展，分设“茶香满瓦肆”“墨香润书房”“花香遍琴室”“沉香盈窄袖”四个板块，展示展演海宁皮影戏、传统制香等23个与宋文...</p>
+                        </div>
+                        <a href="https://www.ihchina.cn/news2_details/28578.html" target="_blank" class="more">查看更多</a>
+                    </div>
+                    <div class=" flex-right">
+                        <div class="datakuang flex-right">
+                            <h3 class="day" style="color: rgb(0, 0, 0);">28</h3>
+                            <div class="xuxian" style="border-top: 1px dashed rgb(0, 0, 0);"></div>
+                            <p class="nianyue" style="color: rgb(0, 0, 0);">2023-11</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-jump">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">首页</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">上一页</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">下一页</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer" >
+    <div class="container">
+        <div class="footer-up-row">
+            <div class="upleft-col-sm6">
+                <div class="upleft-img">
+                    <img src="//img601.yun300.cn/repository/image/fa3f59da-1c42-4964-b608-025f99e4a536.png?tenantId=249701&amp;viewType=1&amp;"  width="100%" height="100%" alt="">
+                </div>
+                <div class="upleft-p">
+                    <p>非物质文化遗产展示与学习网</p>
+                </div>
+            </div>
+            <div class="upright-col-sm6">
+                <div class="footer-up-right">
+                    <div class="link-row">
+                        <div class="upright-title">
+                            <h3>友情链接</h3>
+                        </div>
+                        <div class="links">
+                            <div class="link-col-xs6"><a href="https://www.mct.gov.cn/" target="_blank">中华人民共和国文化和旅游部</a></div>
+                            <div class="link-col-xs6"><a href="https://www.dpm.org.cn/Home.html" target="_blank">故宫博物院</a></div>
+                            <div class="link-col-xs6"><a href="https://www.ihchina.cn/" target="_blank">中国非物质文化遗产网</a></div>
+                            <div class="link-col-xs6"><a href="http://www.jsfybh.com/#/homePage" target="_blank">江苏非物质文化网</a></div>
+                            <div class="link-col-xs6"><a href="https://www.chinesefolklore.org.cn/" target="_blank">中国民俗学网</a></div>
+                            <div class="link-col-xs6"><a href="http://www.ichshanghai.cn/" target="_blank">上海非物质文化网</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-fenxian"></div>
+    <div class="container-bottom">
+        <div class="bottom">
+            <div class="bottom-up" >
+                <a href="#" target="_blank">网站地图</a><span>|</span>
+                <a href="#" target="_blank">关于我们</a><span>|</span>
+                <a href="#" target="_blank">联系我们</a><span>|</span>
+                <a href="#" target="_blank">版权与免责声明</a>
+            </div>
+            <div class="text">
+                <p>中国非物质文化遗产《非遗传承网》 根据《国务院关于加强文化遗产保护的通知》精神，在国家非物质文化遗产保护工作专家委员会非物质文化遗产保护中心、文化和旅游部领导下的公益性非物质文化遗产保护专业网站，促进中国非物质文化遗产传承保护。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    $(document).ready(function() {
+        // 在data中定义params
+        data()
+        {
+            return {
+                params: {
+                    title: 'title',
+                    content: 'content',
+                    publishDate: 'publishDate',
+                },
+                tableData: []
+            };
+        }
+        {
+            findBySearch()
+            {
+                $.ajax({
+                    url: "/admin/search",
+                    type: "GET",
+                    data: this.params,
+                    success: res => {
+                        if (res.code === '0') {
+                            this.tableData = res.data;
+                        } else {
+                            // 处理其他情况
+                        }
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
+            }
+        }
+    })
+</script>
+</html>

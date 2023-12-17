@@ -1,0 +1,8 @@
+com\example\entity\News.class
+com\example\common\Result.class
+com\example\Dao\NewsDao.class
+com\example\service\NewsService$CustomException.class
+com\example\service\NewsService.class
+com\example\entity\Params.class
+com\example\SpringbootApplication.class
+com\example\controller\Newscontroller.class

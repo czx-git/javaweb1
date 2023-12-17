@@ -1,0 +1,14 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: xinwen
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xinwen?serverTimezone=GMT&useSSL=false
+    username: root
+    password: 123456
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entity

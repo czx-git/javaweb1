@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学术百科</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .hero-content {
+        overflow: hidden;
+        width: 100%;
+        height: 470px;
+    }
+    .hero-image {
+        background-image: url("images/piyingxi.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 470px;
+        position: relative;
+    }
+    .large-text1 {
+        top: 50%;
+        left: 50%;
+        width: 350px;
+        height: 100px;
+        background: url(./images/second_title.png) no-repeat;
+        background-size: contain;
+        line-height: 100px;
+        text-align: center;
+        font-size: 50px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        color: #0f0f0f;
+    }
+    body {
+        background-color: rgba(245, 245, 245, 1);
+        background-image: url(images/5-13050G33309.jpg);
+        background-repeat: repeat;
+    }
+    .new_title_container{
+        width: 100%;
+        padding: 40px 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .zuobianxian{
+        width: 240px;
+        height: 1px;
+        border: 1px solid #bb1919;
+    }
+    .new_title_head_mid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .xinwen{
+        font-size: 34px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .youbianxian{
+        width: 240px;
+        height: 1px;
+        border: 1px solid #bb1919;
+    }
+    .new_main_container{
+        font-family: "微软雅黑",serif;
+        width: 1200px;
+        border: #e8e8e8 1px solid;
+        margin: auto;
+        padding-bottom:  50px;
+    }
+    .new_main_row {
+        width: 1250px;
+        margin: auto auto 5px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        font-family: "微软雅黑",serif;
+    }
+    .row{
+        width: 1250px;
+        margin: auto auto 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 33px 55px 33px 55px;
+        background-size: 100% 100%;
+        background: url(images/img27.jpg) no-repeat;
+        overflow: hidden;
+    }
+    .new_img_row{
+        width: 440px;
+        height: 248px;
+        position: relative;
+        float: left;
+        margin-right: 30px;
+    }
+    .new_mid {
+        width: 100%;
+        height: 248px;
+        overflow: hidden;
+        background: url(images/d5b496754df3f86cbe8a77ef031ee636.png) no-repeat;
+        background-size: 670px 248px;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+    .new_title {
+        margin-top: 13px;
+        margin-bottom: 17px;
+        line-height: 1.2;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .new_title a {
+        color: #000000;  /* 正常状态下的文本颜色 */
+        text-decoration: none;  /* 去掉默认的下划线 */
+    }
+    .new_title a:hover {
+        color: #ac2925;  /* 鼠标悬停时的文本颜色 */
+    }
+    .fengexian{
+        width: 100%;
+        height: 1px;
+        border: 1px solid #921c2b;
+        margin: 15px 0;
+    }
+    .p{
+        font-size: 14px;
+        color: #000000;
+        line-height: 25px;
+        height: 170px;
+        display: flex;
+        overflow: hidden;
+        margin-top: 10px;
+        text-overflow: ellipsis;
+    }
+    .page-jump{
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<style>
+    .navbar-default .navbar-nav>li>a { color: #ffffff; }
+</style>
+<body>
+<div class="hero-content">
+    <div class="hero-image">
+        <h1  class="large-text1">学术百科</h1>
+    </div>
+</div>
+<div class="new_main_page"  >
+    <div class="new_main_page_in">
+        <div class="new_main_container" >
+            <div id="new_title_row">
+                <div class="new_title_container">
+                    <div class="zuobianxian"></div>
+                    <img src="images/tb_title_left.png" alt style="margin:0 25px 0 3px;">
+                    <div class="new_title_head_mid">
+                        <img src="images/yue1.png" style="width:113px;height:39px;" alt>
+                        <p class="xinwen">千年传承·名族智慧</p>
+                        <img src="images/yue2.png" style="width:113px;height:39px;" alt>
+                    </div>
+                    <img src="images/tb_title_right.png" alt style="margin:0 3px 0 25px;">
+                    <div class="youbianxian">
+                    </div>
+                </div>
+            </div>
+            <div class="new_main_row">
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/d936577511cd4852be136fbcbcd042c5.jpeg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>什么是非物质文化遗产</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                非物质文化遗产（Intangible Cultural Heritage），简称“非遗”，与“物质文化遗产”相对。
+                                在中国，非物质文化遗产是指各族人民世代相传，并视为其文化遗产组成部分的各种传统文化表现形式，以及与传统文化表现形式相关的实物和场所。
+                                非物质文化遗产是文化多样性中最富活力的重要组成部分，是人类文明的结晶和最宝贵的共同财富，承载着人类的智慧、人类历史的文明与辉煌。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/45640864.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>中国非物质文化遗产代表性项目名录十大门类</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                中国非物质文化遗产代表性项目名录十大门类分别为：民间文学，传统音乐，传统舞蹈，传统戏剧，曲艺，传统体育、游艺与杂技，传统美术，传统技艺，传统医药，民俗。
+                                1、民间文学：梁祝传说、玛纳斯等。
+                                2、传统音乐：古琴艺术、蒙古族长调民歌等。
+                                3、传统舞蹈：秧歌、朝鲜族农乐舞等。
+                                4、传统戏剧：京剧、莆仙戏等。
+                                5、曲艺：苏州评弹、山东大鼓等。
+                                6、传统体育、游艺与杂技：少林功夫、围棋、抖空竹等。
+                                7、传统美术：中国剪纸、杨柳青木版年画等。
+                                8、传统技艺：龙泉青瓷烧制技艺、土家族织锦技艺等。
+                                9、传统医药：中医生命与疾病认知方法、中药炮制技术、藏医药浴法等。
+                                10、民俗：春节、妈祖祭典、径山茶宴等。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/s5bee990f97781.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>什么是国家级文化生态保护区</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                国家级文化生态保护区是指以保护非物质文化遗产为核心，对历史文化积淀丰厚、存续状态良好，具有重要价值和鲜明特色的文化形态进行整体性保护，并经文化和旅游部同意设立的特定区域。
+                                来源：国家级文化生态保护区管理办法（中华人民共和国文化和旅游部令第1号）
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/01f79b5ddba3daa8012053c0af5695.jpg@3000w_1l_0o_100sh.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>非物质文化遗产-皮影戏</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                皮影戏（Shadow Puppets），又称“影子戏”或“灯影戏”，是一种以兽皮或纸板做成的人物剪影以表演故事的民间戏剧。表演时，艺人们在白色幕布后面，一边操纵影人，一边用当地流行的曲调讲述故事，同时配以打击乐器和弦乐，有浓厚的乡土气息。其流行范围极为广泛，并因各地所演的声腔不同而形成多种多样的皮影戏。
+                                皮影戏是中国民间古老的传统艺术，老北京人都叫它“驴皮影”。据史书记载，皮影戏始于西汉，兴于唐朝，盛于清代，元代时期传至西亚和欧洲，可谓历史悠久，源远流长。
+                                2011年，中国皮影戏入选人类非物质文化遗产代表作
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/s5c8b0c06cdd1d.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>非物质文化遗产-京剧</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                京剧，又称平剧、京戏等，中国国粹之一，是中国影响力最大的戏曲剧种，分布地以北京为中心，遍及全国各地。
+                                京剧在文学、表演、音乐、舞台美术等各个方面都有一套规范化的艺术表现形式。京剧的唱腔属板式变化体，以二簧、西皮为主要声腔。京剧伴奏分文场和武场两大类，文场以胡琴为主奏乐器，武场以打击乐伴奏为主（鼓板、大锣、铙钹、小锣）。
+                                京剧的角色分为生、旦、净、丑、杂、武、流等行当，后三行已不再立专行。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="new_img_row">
+                        <a>
+                            <img src="images/f887a5a2efa49b6c33cf72977bcb2f49.jpg" alt="新闻1图片" width="440" height="248">
+                        </a>
+                    </div>
+                    <div class="new_mid">
+                        <div class="new_title">
+                            <a>
+                                <b>非物质文化遗产代表性传承人-曹开永</b>
+                            </a>
+                        </div>
+                        <div class="fengexian"></div>
+                        <div class="p">
+                            <p>
+                                （1939年3月—  ）男，汉族，江西省九江市都昌县西源乡人，国家级非物质文化遗产代表性项目景德镇手工制瓷技艺第三批国家级代表性传承人。
+                                14岁随叔父学艺，1955年跟随高金钱学习剐坯技艺。20世纪50年代中期，进入红光瓷厂工作，期间干了打杂、挑坯等不少活，并烧了20多年的锅炉。
+                                1996年离开红光瓷厂后，先后任居委会主任、昌江区人大代表，其后至景德镇陶瓷历史博览区（古窑）进行了2年的剐坯表演。
+                                其圆器剐坯技艺娴熟，能够根据规格剐出大小相同的碗底，并能一次成功，作品能达到“灯芯草坝子、起线釉、凳板底子”（即碗底要跟一根灯芯草一样匀称，线一样细，凳板一样平）的要求，并可到“透光”程度，代表作品有满尺见方的“水鼎碗”等。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-jump">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">首页</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">上一页</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">下一页</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer" >
+    <div class="container">
+        <div class="footer-up-row">
+            <div class="upleft-col-sm6">
+                <div class="upleft-img">
+                    <img src="//img601.yun300.cn/repository/image/fa3f59da-1c42-4964-b608-025f99e4a536.png?tenantId=249701&amp;viewType=1&amp;k=1698169514000" alt="国家版权非遗技艺测评网" title="国家版权非遗技艺测评网" width="100%" height="100%">
+                </div>
+                <div class="upleft-p">
+                    <p>非物质文化遗产展示与学习网</p>
+                </div>
+            </div>
+            <div class="upright-col-sm6">
+                <div class="footer-up-right">
+                    <div class="link-row">
+                        <div class="upright-title">
+                            <h3>友情链接</h3>
+                        </div>
+                        <div class="links">
+                            <div class="link-col-xs6"><a href="https://www.mct.gov.cn/" target="_blank">中华人民共和国文化和旅游部</a></div>
+                            <div class="link-col-xs6"><a href="https://www.dpm.org.cn/Home.html" target="_blank">故宫博物院</a></div>
+                            <div class="link-col-xs6"><a href="https://www.ihchina.cn/" target="_blank">中国非物质文化遗产网</a></div>
+                            <div class="link-col-xs6"><a href="http://www.jsfybh.com/#/homePage" target="_blank">江苏非物质文化网</a></div>
+                            <div class="link-col-xs6"><a href="https://www.chinesefolklore.org.cn/" target="_blank">中国民俗学网</a></div>
+                            <div class="link-col-xs6"><a href="http://www.ichshanghai.cn/" target="_blank">上海非物质文化网</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-fenxian"></div>
+    <div class="container-bottom">
+        <div class="bottom">
+            <div class="bottom-up" >
+                <a href="#" target="_blank">网站地图</a><span>|</span>
+                <a href="#" target="_blank">关于我们</a><span>|</span>
+                <a href="#" target="_blank">联系我们</a><span>|</span>
+                <a href="#" target="_blank">版权与免责声明</a>
+            </div>
+            <div class="text">
+                <p>中国非物质文化遗产《非遗传承网》 根据《国务院关于加强文化遗产保护的通知》精神，在国家非物质文化遗产保护工作专家委员会非物质文化遗产保护中心、文化和旅游部领导下的公益性非物质文化遗产保护专业网站，促进中国非物质文化遗产传承保护。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .footer {
+        width: 100%;
+        height: 450px;
+        background: url(images/academic_bg.jpg) center center repeat;
+        padding-top: 50px;
+        display: block;;
+    }
+    .container {
+        max-width: 1920px;
+        height: 200px;
+        font-size: 14px;
+        overflow: hidden;
+        margin: 10px auto 0;
+        position: relative;
+        padding: 0 15px;
+    }
+    .upleft-col-sm6{
+        width: 50%;
+        float: left;
+        padding-left: 5px;
+        padding-top: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .upleft-img{
+        display: inline-block;
+        float: left;
+        width: 110px;
+        height: auto;
+        margin-right: 20px;
+    }
+    .upleft-p{
+        margin-right: 100px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    .upright-col-sm6{
+        width: 50%;
+        height: 200px;
+        float: right;
+        padding-left: 20px;
+        position: relative;
+        display: flex;
+        align-items: center; /* 调整为垂直居中 */
+        justify-content: center; /* 调整为水平居中 */
+        box-sizing: border-box;
+        border-left: 1px solid rgba(255,255,255, 0.4);
+        color: #FFFFFF;
+    }
+    .footer-up-right{
+        width: 50%;
+        height: 200px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* 可选，根据需要垂直居中 */
+    }
+    .upright-title{
+        margin-bottom: 20px;
+        color: #333333;
+        font-size: 32px;
+    }
+    .link-row{
+        box-sizing: border-box;
+        margin-bottom: 30px; /* 可根据需要调整间距 */
+    }
+    .links{
+        box-sizing: border-box;
+    }
+    .link-col-xs6{
+        width: 100%;
+    }
+    .footer-fenxian{
+        width: 98%;
+        border-top: 1px solid #FFFFFF;
+        margin: 10px;
+    }
+    .container-bottom{
+        width: auto;
+        max-width: 908px;
+        height: auto;
+        line-height: normal;
+        font-size: 18px;
+        margin: 30px auto 0;
+        padding: 0 20px;
+    }
+    .bottom{
+        position: relative;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bottom-up{
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+    .text{
+        font-size:15px;
+        color: #000000;
+        line-height:2;
+        font-family:微软雅黑,serif;
+    }
+</style>
+</body>
+</html>
