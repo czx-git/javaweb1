@@ -4,9 +4,6 @@ import com.example.Dao.NewsDao;
 import com.example.entity.News;
 import com.example.entity.Params;
 import org.springframework.stereotype.Service;
-
-
-
 import javax.annotation.Resource;
 import java.util.List;
 

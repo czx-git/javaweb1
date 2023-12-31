@@ -1,8 +1,8 @@
 server:
-  port: 8088
+  port: 80
 spring:
   application:
-    name: xinwen
+    name:xinwen
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/xinwen?serverTimezone=GMT&useSSL=false

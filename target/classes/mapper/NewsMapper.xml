@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.Dao.NewsDao">
-    <select id="findBySearch" resultType="com.example.entity.News">
-        select * from news
-        <where>
-            <if test="params != null and params.id != null and params.id != ''">
-                and id like concat('%', #{ params.id }, '%')
-            </if>
-            <if test="params != null and params.title != null and params.title != ''">
-                and title like concat('%', #{ params.title }, '%')
-            </if>
-        </where>
-    </select>
-</mapper>
+    <mapper namespace="com.example.Dao.NewsDao">
+        <select id="findBySearch" resultType="com.example.entity.News">
+            select * from news
+            <where>
+                <if test="params != null and params.id != null and params.id != ''">
+                    and id like concat('%', #{params.id}, '%')
+                </if>
+                <if test="params != null and params.title != null and params.title != ''">
+                    and title like concat('%', #{params.title}, '%')
+                </if>
+            </where>
+        </select>
+    </mapper>
